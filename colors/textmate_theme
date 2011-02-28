@@ -1,0 +1,27 @@
+hi clear
+let colors_name='tm'
+hi Normal guifg=White guibg=#141414
+hi Comment guifg=#677542
+hi Constant guifg=#cf6a4c
+hi String guifg=#8f9d6a
+hi Character guifg=#8f9d6a
+hi Identifier guifg=#7587a6
+hi Statement guifg=#cda869
+hi PreProc guifg=#9b859d
+hi Type guifg=#9b703f
+hi Special guifg=#f9ee98
+hi Todo guifg=White guibg=#562d56
+hi Error guifg=White guibg=#720e09
+hi Underlined guifg=#7587a6
+hi Cursor guifg=#7587a6 guibg=khaki
+hi LineNr guifg=#f9ee98 guibg=#242424
+hi MatchParen guifg=khaki guibg=#7587a6
+hi NonText guifg=#677542 guibg=#242424
+hi ModeMsg guifg=#f9ee98
+hi IncSearch guibg=#7587a6 guifg=#f9ee98
+hi Search guibg=#758b72 guifg=White
+hi StatusLine gui=bold guifg=#f9ee98 guibg=#7587a6
+hi StatusLineNC guibg=#d9ce78 guifg=#7587a6
+hi WhitespaceEOL guibg=darkgray
+
+
