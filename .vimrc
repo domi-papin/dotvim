@@ -1,6 +1,9 @@
 " needed for pathogen plugin
 filetype off
-" call pathogen#runtime_append_all_bundles()
+" activate pathogen
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 filetype plugin indent on
 
 " no vi comptible mode
