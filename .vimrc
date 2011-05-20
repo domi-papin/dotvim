@@ -75,6 +75,8 @@ let mapleader = ","
 nnoremap <leader>a :Ack 
 " ,W clear all trailing white spaces
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR> 
+" ,s replace word under cursor
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 " ,v select block of text just pasted
 nnoremap <leader>v V`]
 " jj alternative to ESC in insert mode
