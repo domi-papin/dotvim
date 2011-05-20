@@ -73,6 +73,7 @@ cmap w!! %!sudo tee > /dev/null %
 " leader key and mapping 
 let mapleader = ","
 " invoke ack
+let g:ackprg="ack-grep -H --nocolor --nogroup"
 nnoremap <leader>a :Ack 
 " ,W clear all trailing white spaces
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR> 
