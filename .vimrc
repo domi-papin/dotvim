@@ -6,6 +6,7 @@ call pathogen#helptags()
 
 filetype plugin indent on
 
+
 " no vi comptible mode
 set nocompatible
 
@@ -103,6 +104,29 @@ map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+
+" close current buffer and preserve split windows 
+" Mormal mode : <Leader> c ou d (save&&close or close only)
+map <Leader>c <Esc>:call CleanClose(1) <CR>
+map <Leader>d <Esc>:call CleanClose(0) <CR>
+
+function! CleanClose(tosave)
+    if (a:tosave == 1)
+        w!
+    endif
+    let todelbufNr = bufnr("%")
+    let newbufNr = bufnr("#")
+    if ((newbufNr != -1) && (newbufNr != todelbufNr) && buflisted(newbufNr))
+        exe "b".newbufNr
+    else
+        bnext
+    endif
+
+    if (bufnr("%") == todelbufNr)
+        new
+    endif
+    exe "bd".todelbufNr
+endfunction
 
 
 "statusline setup
@@ -218,13 +242,10 @@ vmap <C-Down> ]egv
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$']
-map <Leader>n :NERDTreeToggle<CR>
+" map <Leader>n :NERDTreeToggle<CR>
 
 " Command-T configuration
 let g:CommandTMaxHeight=20
-
-" ZoomWin configuration
-map <Leader><Leader> :ZoomWin<CR>
 
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
