@@ -93,6 +93,8 @@ nnoremap <C-l> <C-w>l
 
 " F5 to list buffers and switch
 :nnoremap <F5> :buffers<CR>:buffer<Space>
+" F6 to switch paste mode
+set pastetoggle=<F6>
 
 " Opens an edit command with the path of the currently edited file filled in
 " Normal mode: <Leader>e
